@@ -58,6 +58,9 @@ function calculate() {
         // π
         expression = expression.replace(/π/g, Math.PI);
 
+        // module
+        expression = expression.replace(/\bmod\b/g, '%');
+
         // n% and %n
         expression = expression
             .replace(/([0-9.]+)%/g, '($1/100)')
@@ -65,7 +68,7 @@ function calculate() {
 
         const result = eval(expression);
 
-        // 0 div
+        // division by 0
         if (!isFinite(result)) {
             display.value = 'Error (división por 0)';
             return;
@@ -74,6 +77,7 @@ function calculate() {
         lastResult = +result.toFixed(8);
         display.value = lastResult;
         justCalculated = true;
+
     } catch (error) {
         display.value = 'Error de Sintaxis';
     }
