@@ -1,0 +1,112 @@
+body {
+    background-image: linear-gradient(to top, #a41f13, #292f36);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;    display: flex;
+    font-size: 17px;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Calc Box */
+.calculator {
+  position: relative;
+  background: #e0dbd8;
+  padding: 20px;
+  border-radius: 12px;
+  border: 4px solid #10151a;
+  box-shadow: 0 4px 10px rgba(8, 0, 0, 0.2);
+  width: 300px;
+}
+
+
+/* Title */
+h1 {
+    color: #10151a;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-bottom: 10px;
+}
+
+/* Text Box */
+#display {
+    width: 90%;
+    max-width: 280px;
+    height: 50px;
+    text-align: right;
+    font-size: 1.5em;
+    margin: 0 auto 10px;
+    padding-right: 10px;
+    border: 2px solid #8F7A6E;
+    border-radius: 8px;
+    display: block;
+}
+
+/* Button Styles */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+.btn {
+    padding: 15px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 8px;
+    background: #faf5f1;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    background: #e77267;
+    color: #faf5f1;
+}
+
+.btnans {
+  display: block;
+  width: 90%;
+  max-width: 280px;
+  margin: 10px auto 0;
+  padding: 15px;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 8px;
+  background: #faf5f1;
+  cursor: pointer;
+  transition: 0.2s;
+  text-align: center;
+}
+
+.btnans:hover {
+  background: #e77267;
+  color: #faf5f1;
+}
+
+/* Load anim */
+@keyframes slideFadeBounce {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    60% {
+      opacity: 1;
+      transform: translateY(-10px);
+    }
+    80% {
+      transform: translateY(5px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+.calculator.animate {
+    animation: slideFadeBounce 0.8s ease-out;
+}
